@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portofolio - Junior Web Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fauzan | Junior Web Developer</title>
   <style>
     :root {
       --biru-pastel: #A3D2CA;
       --pink-pastel: #F7D6E0;
-      --putih: #ffffff;
-      --abu-muda: #f2f2f2;
-      --abu-tua: #555;
+      --abu: #444;
+      --putih: #fff;
       --font: 'Segoe UI', sans-serif;
     }
 
@@ -22,131 +21,231 @@
     }
 
     body {
-      background-color: var(--abu-muda);
-      color: var(--abu-tua);
-      line-height: 1.6;
+      background: #f9f9f9;
+      color: var(--abu);
+    }
+
+    a {
+      color: var(--abu);
+      text-decoration: none;
     }
 
     header {
-      background: linear-gradient(120deg, var(--biru-pastel), var(--pink-pastel));
-      padding: 2rem;
+      background: linear-gradient(135deg, var(--biru-pastel), var(--pink-pastel));
+      padding: 4rem 2rem;
       text-align: center;
-      color: var(--abu-tua);
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      color: #333;
     }
 
     header p {
       font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .btn {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #fff;
+      color: #333;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--pink-pastel);
     }
 
     section {
-      background-color: var(--putih);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-left: 8px solid var(--biru-pastel);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border-radius: 8px;
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
 
     section h2 {
-      color: var(--pink-pastel);
-      margin-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #555;
     }
 
-    ul {
-      list-style: square;
-      padding-left: 1.5rem;
+    .about, .education, .organization, .projects, .contact {
+      margin-bottom: 3rem;
     }
 
-    .project {
-      background-color: var(--pink-pastel);
-      border-left: 8px solid var(--biru-pastel);
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .education ul,
+    .organization ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .education li,
+    .organization li {
+      background: var(--putih);
       padding: 1rem;
-      border-radius: 8px;
       margin-bottom: 1rem;
+      border-left: 5px solid var(--biru-pastel);
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .projects .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--putih);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 1rem;
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      background: var(--biru-pastel);
+      border: none;
+      padding: 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     footer {
+      background: var(--biru-pastel);
       text-align: center;
-      padding: 1.5rem;
-      background-color: var(--biru-pastel);
-      color: var(--abu-tua);
+      padding: 1rem;
+      color: #333;
     }
 
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
       }
-
-      .container {
-        padding: 0 0.5rem;
-      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Hero -->
   <header>
     <h1>Fauzan Ramadhan</h1>
-    <p>Junior Web Developer | Passionate in Front-End & UI Design</p>
+    <p>Junior Web Developer | Front-End Enthusiast</p>
+    <a href="#contact"><button class="btn">Hubungi Saya</button></a>
   </header>
 
-  <div class="container">
-    
-    <section id="profil">
-      <h2>Profil</h2>
-      <p>Saya adalah seorang Junior Web Developer yang memiliki minat besar dalam pengembangan website, khususnya pada bagian front-end. Saya senang menggabungkan logika pemrograman dengan estetika desain agar menghasilkan website yang menarik dan fungsional.</p>
-    </section>
+  <!-- About -->
+  <section class="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya adalah seorang Junior Web Developer yang menyukai dunia front-end development dan desain antarmuka. Saya terbiasa menggunakan HTML, CSS, JavaScript, dan juga framework modern seperti Tailwind dan Bootstrap. Tujuan saya adalah membangun website yang tidak hanya fungsional tapi juga menarik secara visual.
+    </p>
+  </section>
 
-    <section id="pendidikan">
-      <h2>Pendidikan</h2>
-      <ul>
-        <li>SMK Negeri 1 Jakarta – Rekayasa Perangkat Lunak (2020 - 2023)</li>
-        <li>Universitas Teknologi Indonesia – Teknik Informatika (2023 - Sekarang)</li>
-      </ul>
-    </section>
+  <!-- Pendidikan -->
+  <section class="education">
+    <h2>Pendidikan</h2>
+    <ul>
+      <li><strong>SMK Negeri 1 Jakarta</strong> – RPL (2020 - 2023)</li>
+      <li><strong>Universitas Teknologi Indonesia</strong> – Teknik Informatika (2023 - Sekarang)</li>
+    </ul>
+  </section>
 
-    <section id="organisasi">
-      <h2>Organisasi</h2>
-      <ul>
-        <li>Ketua Divisi Multimedia – OSIS SMK Negeri 1 Jakarta (2021 - 2022)</li>
-        <li>Anggota Developer Club – Universitas Teknologi Indonesia (2023 - Sekarang)</li>
-      </ul>
-    </section>
+  <!-- Organisasi -->
+  <section class="organization">
+    <h2>Pengalaman Organisasi</h2>
+    <ul>
+      <li><strong>Ketua Divisi Multimedia</strong> – OSIS SMK Negeri 1 Jakarta (2021 - 2022)</li>
+      <li><strong>Anggota Developer Club</strong> – Universitas Teknologi Indonesia (2023 - Sekarang)</li>
+    </ul>
+  </section>
 
-    <section id="projects">
-      <h2>Proyek Pembuatan Website</h2>
-      
-      <div class="project">
-        <h3>1. Website Portofolio Pribadi</h3>
-        <p>Menggunakan HTML, CSS, dan JavaScript. Dirancang dengan tampilan minimalis dan warna pastel untuk menampilkan informasi pribadi dan proyek-proyek saya.</p>
+  <!-- Projects -->
+  <section class="projects">
+    <h2>Proyek Saya</h2>
+    <div class="grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Portofolio" alt="Project 1">
+        <div class="content">
+          <h3>Website Portofolio Pribadi</h3>
+          <p>Website sederhana untuk menampilkan profil, skill, dan proyek. Dibuat dengan HTML, CSS, dan JS.</p>
+        </div>
       </div>
-
-      <div class="project">
-        <h3>2. Website Toko Online (Mini E-commerce)</h3>
-        <p>Frontend menggunakan Bootstrap, backend sederhana dengan PHP & MySQL. Fitur: katalog produk, cart, dan checkout dummy.</p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Toko+Online" alt="Project 2">
+        <div class="content">
+          <h3>Mini E-Commerce</h3>
+          <p>Website toko online sederhana dengan fitur katalog dan keranjang. Menggunakan PHP dan Bootstrap.</p>
+        </div>
       </div>
-
-      <div class="project">
-        <h3>3. Landing Page Produk Digital</h3>
-        <p>Menggunakan Tailwind CSS. Fokus pada responsive design dan call-to-action yang efektif untuk pemasaran digital.</p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200?text=Landing+Page" alt="Project 3">
+        <div class="content">
+          <h3>Landing Page Produk Digital</h3>
+          <p>Landing page modern menggunakan Tailwind CSS untuk promosi e-book digital.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Kontak Saya</h2>
+    <form>
+      <input type="text" placeholder="Nama Anda" required>
+      <input type="email" placeholder="Email Anda" required>
+      <textarea rows="5" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Fauzan Ramadhan. Dibuat dengan ❤️ dan pastel.
+    &copy; 2025 Fauzan Ramadhan — Dibuat dengan cinta dan warna pastel 🎨
   </footer>
 
 </body>
