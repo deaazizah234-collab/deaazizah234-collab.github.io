@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Dea Azizah | Junior Web Developer</title>
   <style>
-    /* ===== GAYA DASAR ===== */
+    /* ===== RESET & GAYA UMUM ===== */
     * {
       margin: 0;
       padding: 0;
@@ -15,26 +15,26 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #b3daff, #ffd6e8);
-      color: #333;
+      background: linear-gradient(135deg, #d8f3dc, #f1faee);
+      color: #2e2e2e;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(10px);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      z-index: 10;
+      z-index: 100;
     }
 
     header h1 {
       font-size: 1.8em;
-      color: #0066cc;
+      color: #2d6a4f;
       font-weight: 700;
     }
 
@@ -47,26 +47,27 @@
     }
 
     nav a:hover {
-      color: #ff69b4;
+      color: #40916c;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO / PROFIL ===== */
     .hero {
       text-align: center;
       padding: 80px 20px;
-      background: linear-gradient(135deg, #cde9ff, #ffe1f0);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      color: #004d80;
+      background: linear-gradient(135deg, #b7e4c7, #d8f3dc);
+      color: #1b4332;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
 
     .hero img {
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      border: 5px solid #fff;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      border: 5px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
       margin-bottom: 20px;
       transition: transform 0.4s ease;
+      object-fit: cover;
     }
 
     .hero img:hover {
@@ -80,17 +81,17 @@
 
     .hero p {
       font-size: 1.1em;
-      color: #555;
+      color: #333;
     }
 
-    /* ===== BAGIAN UMUM ===== */
+    /* ===== SECTION STYLE ===== */
     section {
       max-width: 1000px;
       margin: 60px auto;
-      background: rgba(255,255,255,0.9);
+      background: #ffffffcc;
       padding: 40px;
       border-radius: 25px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       animation: fadeIn 0.8s ease;
     }
 
@@ -100,19 +101,19 @@
     }
 
     h2.section-title {
-      color: #004d80;
-      border-left: 6px solid #ffb3d9;
+      color: #2d6a4f;
+      border-left: 6px solid #74c69d;
       padding-left: 15px;
       font-size: 1.8em;
       margin-bottom: 20px;
     }
 
     p {
-      color: #555;
+      color: #444;
       line-height: 1.7;
     }
 
-    /* ===== PROFIL ===== */
+    /* ===== TENTANG SAYA ===== */
     .profile {
       text-align: center;
     }
@@ -129,16 +130,16 @@
     }
 
     .education li {
-      background: #f0f7ff;
+      background: #e9f5ec;
       margin: 10px 0;
       padding: 15px 20px;
       border-radius: 15px;
-      border-left: 5px solid #99ccff;
+      border-left: 5px solid #74c69d;
       transition: 0.3s;
     }
 
     .education li:hover {
-      background: #e2f0ff;
+      background: #d8f3dc;
       transform: translateX(5px);
     }
 
@@ -149,57 +150,65 @@
     }
 
     .organization li {
-      background: #ffe6f3;
+      background: #f0fff4;
       margin: 10px 0;
       padding: 15px 20px;
       border-radius: 15px;
-      border-left: 5px solid #ffb3d9;
+      border-left: 5px solid #95d5b2;
       transition: 0.3s;
     }
 
     .organization li:hover {
-      background: #ffd6eb;
+      background: #e2f8eb;
       transform: translateX(5px);
     }
 
     /* ===== PROYEK ===== */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
 
     .project-card {
-      background: linear-gradient(135deg, #d6ecff, #ffe6f3);
+      background: #f4fff8;
       padding: 25px;
       border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
       text-align: center;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: 0.4s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
     }
 
     .project-card h4 {
-      color: #0066cc;
-      margin-bottom: 10px;
+      color: #2d6a4f;
+      margin-bottom: 8px;
     }
 
     .project-card p {
-      color: #444;
       font-size: 0.95em;
+      color: #333;
     }
 
     /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 25px;
-      background: rgba(255,255,255,0.85);
-      border-top: 3px solid #ffb3d9;
-      color: #555;
+      background: rgba(255, 255, 255, 0.85);
+      border-top: 3px solid #74c69d;
+      color: #333;
       font-size: 0.95em;
       margin-top: 60px;
     }
@@ -209,14 +218,21 @@
       header {
         flex-direction: column;
       }
-      nav { margin-top: 10px; }
-      section { padding: 25px; }
-      .hero h2 { font-size: 2em; }
+      nav {
+        margin-top: 10px;
+      }
+      section {
+        padding: 25px;
+      }
+      .hero h2 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>Dea Azizah</h1>
     <nav>
@@ -227,21 +243,25 @@
     </nav>
   </header>
 
+  <!-- HERO / PROFIL -->
   <section class="hero" id="profil">
-    <!-- 💡 Ganti link foto di src -->
+    <!-- Ganti link foto profil kamu di sini -->
     <img src="https://via.placeholder.com/160" alt="Foto Dea Azizah">
     <h2>Dea Azizah</h2>
-    <p>Junior Web Developer | Front-End Enthusiast 💙💗</p>
+    <p>Junior Web Developer | Front-End Enthusiast 🌿</p>
   </section>
 
+  <!-- TENTANG SAYA -->
   <section class="profile">
     <h2 class="section-title">Tentang Saya</h2>
     <p>
-      Hai! Saya <strong>Dea Azizah</strong>, seorang Junior Web Developer yang bersemangat dalam menciptakan tampilan web elegan dan interaktif.
-      Saya fokus pada <strong>HTML, CSS, dan JavaScript</strong> dengan perhatian pada detail, warna, dan pengalaman pengguna.
+      Halo! Saya <strong>Dea Azizah</strong>, seorang Junior Web Developer yang menyukai keindahan desain web dan fungsionalitas kode.
+      Saya berfokus pada pengembangan antarmuka web menggunakan <strong>HTML, CSS, dan JavaScript</strong> dengan pendekatan elegan dan ramah pengguna.
+      Saya percaya bahwa setiap website harus mencerminkan identitas dan pengalaman yang menyenangkan bagi penggunanya.
     </p>
   </section>
 
+  <!-- PENDIDIKAN -->
   <section id="pendidikan" class="education">
     <h2 class="section-title">Pendidikan</h2>
     <ul>
@@ -250,35 +270,42 @@
     </ul>
   </section>
 
+  <!-- ORGANISASI -->
   <section id="organisasi" class="organization">
     <h2 class="section-title">Organisasi</h2>
     <ul>
       <li>Himpunan Mahasiswa Informatika — Anggota Aktif (2023 - Sekarang)</li>
       <li>Panitia Web Design Competition — Divisi Dokumentasi (2024)</li>
+      <li>Komunitas Developer Kampus — Tim Front-End (2024)</li>
     </ul>
   </section>
 
+  <!-- PROYEK -->
   <section id="proyek" class="projects">
     <h2 class="section-title">Proyek Website</h2>
 
     <div class="project-card">
+      <img src="https://via.placeholder.com/400x200?text=Portofolio+Website" alt="Proyek Portofolio">
       <h4>Website Portofolio Pribadi</h4>
-      <p>Membangun portofolio pribadi dengan desain pastel elegan dan animasi lembut.</p>
+      <p>Membangun website portofolio dengan gaya minimalis, berwarna hijau pastel, dan animasi lembut.</p>
     </div>
 
     <div class="project-card">
+      <img src="https://via.placeholder.com/400x200?text=E-Commerce" alt="Proyek E-Commerce">
       <h4>PastelShop E-Commerce</h4>
-      <p>Website toko online bertema pastel biru-pink dengan layout responsif dan tampilan modern.</p>
+      <p>Website toko online dengan tampilan pastel hijau dan desain elegan yang responsif di semua perangkat.</p>
     </div>
 
     <div class="project-card">
-      <h4>Landing Page Kampus</h4>
-      <p>Landing page informatif dengan struktur sederhana dan warna lembut yang profesional.</p>
+      <img src="https://via.placeholder.com/400x200?text=Landing+Page" alt="Landing Page Kampus">
+      <h4>Landing Page Event Kampus</h4>
+      <p>Landing page informatif dengan tampilan bersih dan nuansa hijau yang menenangkan.</p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    © 2025 Dea Azizah | Dibuat dengan 💙 & 💗 oleh Junior Web Developer
+    © 2025 Dea Azizah | Dibuat dengan 💚 oleh Junior Web Developer
   </footer>
 
 </body>
