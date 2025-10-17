@@ -3,258 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Commerce PastelShop</title>
+  <title>Portofolio Dea Azizah | Junior Web Developer</title>
   <style>
     /* ====== DASAR ====== */
-    body {
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #d6eaff, #ffd6e8);
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    a { text-decoration: none; color: inherit; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #b3daff, #ffd6e8);
+      color: #333;
+      overflow-x: hidden;
+    }
 
     header {
-      background-color: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       padding: 20px 40px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
     header h1 {
-      color: #0066cc;
       font-size: 1.8em;
-      margin: 0;
+      color: #0066cc;
     }
 
     nav a {
       margin-left: 20px;
-      font-weight: 600;
+      text-decoration: none;
       color: #333;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: #ff69b4;
     }
 
+    /* ====== HERO ====== */
     .hero {
       text-align: center;
       padding: 80px 20px;
-      background: linear-gradient(135deg, #bfe7ff, #ffd6e8);
+      background: linear-gradient(135deg, #bfe7ff, #ffe1f0);
       color: #004d80;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      transition: transform 0.4s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
     }
 
     .hero h2 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 1.1em;
-      color: #333;
+      color: #444;
     }
 
-    .container {
+    /* ====== SECTION UMUM ====== */
+    section {
       max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 60px auto;
       background-color: rgba(255,255,255,0.9);
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.8s ease;
     }
 
     h2.section-title {
+      font-size: 1.8em;
       color: #004d80;
       border-left: 6px solid #ffb3d9;
-      padding-left: 10px;
-      margin-bottom: 20px;
-      font-size: 1.8em;
+      padding-left: 15px;
+      margin-bottom: 25px;
     }
 
-    /* ====== PRODUK ====== */
-    .products {
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== PROFIL ====== */
+    .profile {
+      text-align: center;
+    }
+
+    .profile p {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* ====== PENDIDIKAN ====== */
+    .education ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .education li {
+      background: #f0f7ff;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border-left: 5px solid #99ccff;
+      transition: 0.3s;
+    }
+
+    .education li:hover {
+      transform: translateX(5px);
+      background: #e0f0ff;
+    }
+
+    /* ====== ORGANISASI ====== */
+    .organization ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .organization li {
+      background: #ffe6f2;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border-left: 5px solid #ffb3d9;
+      transition: 0.3s;
+    }
+
+    .organization li:hover {
+      transform: translateX(5px);
+      background: #ffd6eb;
+    }
+
+    /* ====== PROYEK ====== */
+    .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
 
-    .product {
-      background: #f0f6ff;
-      border-radius: 15px;
-      overflow: hidden;
-      text-align: center;
+    .project-card {
+      background: linear-gradient(135deg, #d9ecff, #ffe6f2);
+      padding: 25px;
+      border-radius: 20px;
       box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .product h3 {
-      margin: 10px 0 5px;
-      color: #0066cc;
-    }
-
-    .product p {
-      color: #555;
-      margin: 0 0 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #bfe7ff, #ffd6e8);
-      border-radius: 25px;
-      color: #004d80;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: linear-gradient(90deg, #a4d3ff, #ffcce0);
-      transform: scale(1.05);
-    }
-
-    /* ====== ABOUT ====== */
-    .about {
+      transition: 0.4s;
       text-align: center;
     }
 
-    .about p {
-      color: #444;
-      line-height: 1.7;
-      max-width: 800px;
-      margin: 0 auto;
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
-    /* ====== KONTAK ====== */
-    .contact {
-      text-align: center;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .info-box {
-      background-color: #f0f6ff;
-      padding: 20px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-    }
-
-    .info-box h4 {
+    .project-card h4 {
       color: #0066cc;
       margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #444;
     }
 
     /* ====== FOOTER ====== */
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: rgba(255,255,255,0.9);
-      border-top: 3px solid #ffd6e8;
+      padding: 25px;
+      background: rgba(255,255,255,0.8);
+      border-top: 3px solid #ffb3d9;
       color: #555;
-      margin-top: 40px;
+      font-size: 0.95em;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      section {
+        padding: 25px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>PastelShop</h1>
+    <h1>Dea Azizah</h1>
     <nav>
-      <a href="#beranda">Beranda</a>
-      <a href="#produk">Produk</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#kontak">Kontak</a>
+      <a href="#profil">Profil</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#proyek">Proyek</a>
     </nav>
   </header>
 
-  <section id="beranda" class="hero">
-    <h2>Selamat Datang di PastelShop 💙💗</h2>
-    <p>Toko online dengan nuansa pastel manis untuk segala kebutuhanmu!</p>
+  <section class="hero" id="profil">
+    <!-- 💡 Ganti foto profil kamu di bagian src -->
+    <img src="https://via.placeholder.com/150" alt="Foto Dea Azizah">
+    <h2>Dea Azizah</h2>
+    <p>Junior Web Developer | Front-End Enthusiast 💙💗</p>
   </section>
 
-  <div class="container" id="produk">
-    <h2 class="section-title">Produk Kami</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Produk 1">
-        <h3>Kaos Pastel</h3>
-        <p>Rp 120.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
+  <section class="profile">
+    <h2 class="section-title">Tentang Saya</h2>
+    <p>
+      Halo! Saya Dea, seorang <strong>Junior Web Developer</strong> dengan minat besar pada desain antarmuka yang elegan dan pengembangan web interaktif.
+      Saya terbiasa bekerja menggunakan <strong>HTML, CSS, JavaScript</strong>, dan memiliki ketertarikan untuk terus belajar teknologi web modern.
+    </p>
+  </section>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Produk 2">
-        <h3>Sepatu Biru Muda</h3>
-        <p>Rp 350.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
+  <section id="pendidikan" class="education">
+    <h2 class="section-title">Pendidikan</h2>
+    <ul>
+      <li><strong>Universitas Teknologi Bandung</strong> — S1 Teknik Informatika (2022 - Sekarang)</li>
+      <li><strong>SMA Negeri 1 Bandung</strong> — Jurusan IPA (2019 - 2022)</li>
+    </ul>
+  </section>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Produk 3">
-        <h3>Tas Pink Pastel</h3>
-        <p>Rp 275.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
+  <section id="organisasi" class="organization">
+    <h2 class="section-title">Organisasi</h2>
+    <ul>
+      <li>Himpunan Mahasiswa Informatika — Anggota Aktif (2023 - Sekarang)</li>
+      <li>Panitia Web Design Competition — Divisi Dokumentasi (2024)</li>
+    </ul>
+  </section>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1581579185169-1b1c5dfbfc17" alt="Produk 4">
-        <h3>Topi Biru Muda</h3>
-        <p>Rp 95.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
+  <section id="proyek" class="projects">
+    <h2 class="section-title">Proyek Website</h2>
+
+    <div class="project-card">
+      <h4>Website Portofolio Pribadi</h4>
+      <p>Mengembangkan website portofolio interaktif menggunakan HTML, CSS, dan animasi halus.</p>
     </div>
-  </div>
 
-  <div class="container about" id="tentang">
-    <h2 class="section-title">Tentang Kami</h2>
-    <p><strong>PastelShop</strong> berdiri sejak 2024 sebagai toko e-commerce lokal dengan gaya lembut dan elegan. Kami menghadirkan produk-produk fashion bernuansa pastel yang nyaman, estetik, dan cocok untuk semua usia. Kami percaya warna lembut bisa memberikan semangat baru setiap hari! 💗💙</p>
-  </div>
-
-  <div class="container contact" id="kontak">
-    <h2 class="section-title">Kontak Kami</h2>
-    <div class="contact-info">
-      <div class="info-box">
-        <h4>📍 Alamat</h4>
-        <p>Jl. Melati No.10, Bandung</p>
-      </div>
-      <div class="info-box">
-        <h4>📞 Telepon</h4>
-        <p>+62 812-3456-7890</p>
-      </div>
-      <div class="info-box">
-        <h4>📧 Email</h4>
-        <p>info@pastelshop.id</p>
-      </div>
+    <div class="project-card">
+      <h4>PastelShop E-Commerce</h4>
+      img src="
+      <p>Membuat tampilan e-commerce dengan desain pastel yang lembut dan layout responsif.</p>
     </div>
-  </div>
+
+    <div class="project-card">
+      <h4>Landing Page Kampus</h4>
+      <p>Halaman promosi acara kampus yang menarik, responsif, dan penuh warna.</p>
+    </div>
+  </section>
 
   <footer>
-    © 2025 PastelShop — Dibuat dengan 💙 dan 💗 oleh Dea Azizah
+    © 2025 Dea Azizah | Dibuat dengan 💙 & 💗 untuk dunia web yang indah
   </footer>
 
 </body>
