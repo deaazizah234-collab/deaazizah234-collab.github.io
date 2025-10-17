@@ -1,261 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Commerce PastelShop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio - Junior Web Developer</title>
   <style>
-    /* ====== DASAR ====== */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #d6eaff, #ffd6e8);
-      color: #333;
+    :root {
+      --biru-pastel: #A3D2CA;
+      --pink-pastel: #F7D6E0;
+      --putih: #ffffff;
+      --abu-muda: #f2f2f2;
+      --abu-tua: #555;
+      --font: 'Segoe UI', sans-serif;
     }
 
-    a { text-decoration: none; color: inherit; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+    }
+
+    body {
+      background-color: var(--abu-muda);
+      color: var(--abu-tua);
+      line-height: 1.6;
+    }
 
     header {
-      background-color: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: linear-gradient(120deg, var(--biru-pastel), var(--pink-pastel));
+      padding: 2rem;
+      text-align: center;
+      color: var(--abu-tua);
     }
 
     header h1 {
-      color: #0066cc;
-      font-size: 1.8em;
-      margin: 0;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    nav a {
-      margin-left: 20px;
-      font-weight: 600;
-      color: #333;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff69b4;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #bfe7ff, #ffd6e8);
-      color: #004d80;
-    }
-
-    .hero h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.1em;
-      color: #333;
+    header p {
+      font-size: 1.2rem;
     }
 
     .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: rgba(255,255,255,0.9);
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    h2.section-title {
-      color: #004d80;
-      border-left: 6px solid #ffb3d9;
-      padding-left: 10px;
-      margin-bottom: 20px;
-      font-size: 1.8em;
+    section {
+      background-color: var(--putih);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 8px solid var(--biru-pastel);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 8px;
     }
 
-    /* ====== PRODUK ====== */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    section h2 {
+      color: var(--pink-pastel);
+      margin-bottom: 1rem;
     }
 
-    .product {
-      background: #f0f6ff;
-      border-radius: 15px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
+    ul {
+      list-style: square;
+      padding-left: 1.5rem;
     }
 
-    .product:hover {
-      transform: translateY(-5px);
+    .project {
+      background-color: var(--pink-pastel);
+      border-left: 8px solid var(--biru-pastel);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .product h3 {
-      margin: 10px 0 5px;
-      color: #0066cc;
-    }
-
-    .product p {
-      color: #555;
-      margin: 0 0 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #bfe7ff, #ffd6e8);
-      border-radius: 25px;
-      color: #004d80;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: linear-gradient(90deg, #a4d3ff, #ffcce0);
-      transform: scale(1.05);
-    }
-
-    /* ====== ABOUT ====== */
-    .about {
-      text-align: center;
-    }
-
-    .about p {
-      color: #444;
-      line-height: 1.7;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* ====== KONTAK ====== */
-    .contact {
-      text-align: center;
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .info-box {
-      background-color: #f0f6ff;
-      padding: 20px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-    }
-
-    .info-box h4 {
-      color: #0066cc;
-      margin-bottom: 10px;
-    }
-
-    /* ====== FOOTER ====== */
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: rgba(255,255,255,0.9);
-      border-top: 3px solid #ffd6e8;
-      color: #555;
-      margin-top: 40px;
+      padding: 1.5rem;
+      background-color: var(--biru-pastel);
+      color: var(--abu-tua);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 0 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>PastelShop</h1>
-    <nav>
-      <a href="#beranda">Beranda</a>
-      <a href="#produk">Produk</a>
-      <a href="#tentang">Tentang</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
-
-  <section id="beranda" class="hero">
-    <h2>Selamat Datang di PastelShop 💙💗</h2>
-    <p>Toko online dengan nuansa pastel manis untuk segala kebutuhanmu!</p>
-  </section>
-
-  <div class="container" id="produk">
-    <h2 class="section-title">Produk Kami</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Produk 1">
-        <h3>Kaos Pastel</h3>
-        <p>Rp 120.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
-
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Produk 2">
-        <h3>Sepatu Biru Muda</h3>
-        <p>Rp 350.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
-
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Produk 3">
-        <h3>Tas Pink Pastel</h3>
-        <p>Rp 275.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
-
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1581579185169-1b1c5dfbfc17" alt="Produk 4">
-        <h3>Topi Biru Muda</h3>
-        <p>Rp 95.000</p>
-        <a href="#" class="btn">Tambah ke Keranjang</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="container about" id="tentang">
-    <h2 class="section-title">Tentang Kami</h2>
-    <p><strong>PastelShop</strong> berdiri sejak 2024 sebagai toko e-commerce lokal dengan gaya lembut dan elegan. Kami menghadirkan produk-produk fashion bernuansa pastel yang nyaman, estetik, dan cocok untuk semua usia. Kami percaya warna lembut bisa memberikan semangat baru setiap hari! 💗💙</p>
-  </div>
-
-  <div class="container contact" id="kontak">
-    <h2 class="section-title">Kontak Kami</h2>
-    <div class="contact-info">
-      <div class="info-box">
-        <h4>📍 Alamat</h4>
-        <p>Jl. Melati No.10, Bandung</p>
-      </div>
-      <div class="info-box">
-        <h4>📞 Telepon</h4>
-        <p>+62 812-3456-7890</p>
-      </div>
-      <div class="info-box">
-        <h4>📧 Email</h4>
-        <p>info@pastelshop.id</p>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 PastelShop — Dibuat dengan 💙 dan 💗 oleh Dea Azizah
-  </footer>
-
-</body>
-</html>
+    <h1>Fauzan Ramadhan</h1>
+    <p>Junior Web Developer | Passionate in Front-End & UI Design</p>
