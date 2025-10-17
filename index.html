@@ -3,64 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portofolio Junior Web Developer</title>
+  <title>Portofolio Dea Azizah | Junior Web Developer</title>
   <style>
-    /* ====== GAYA DASAR ====== */
-    body {
-      font-family: "Poppins", sans-serif;
+    /* ====== DASAR ====== */
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #cce3ff, #ffd6e8);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #b3daff, #ffd6e8);
       color: #333;
+      overflow-x: hidden;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       padding: 20px 40px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
     header h1 {
+      font-size: 1.8em;
       color: #0066cc;
-      font-size: 2em;
-      margin: 0;
-    }
-
-    nav {
-      margin-top: 10px;
     }
 
     nav a {
+      margin-left: 20px;
       text-decoration: none;
       color: #333;
-      margin: 0 15px;
       font-weight: 600;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: #ff69b4;
     }
 
-    section {
-      max-width: 1000px;
-      margin: 50px auto;
-      background-color: rgba(255,255,255,0.9);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    /* ====== HERO ====== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #bfe7ff, #ffe1f0);
+      color: #004d80;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      border-left: 6px solid #ffb3d9;
-      padding-left: 10px;
-      color: #004d80;
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
       margin-bottom: 20px;
+      transition: transform 0.4s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    .hero h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    /* ====== SECTION UMUM ====== */
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      background-color: rgba(255,255,255,0.9);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.8s ease;
+    }
+
+    h2.section-title {
+      font-size: 1.8em;
+      color: #004d80;
+      border-left: 6px solid #ffb3d9;
+      padding-left: 15px;
+      margin-bottom: 25px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* ====== PROFIL ====== */
@@ -68,22 +111,10 @@
       text-align: center;
     }
 
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #b3daff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 15px;
-    }
-
-    .profile h3 {
-      color: #0066cc;
-      margin-bottom: 5px;
-    }
-
     .profile p {
+      max-width: 700px;
+      margin: 10px auto;
+      line-height: 1.7;
       color: #555;
     }
 
@@ -94,37 +125,58 @@
     }
 
     .education li {
-      background-color: #f0f7ff;
+      background: #f0f7ff;
       margin: 10px 0;
-      padding: 15px;
-      border-radius: 10px;
-      border-left: 5px solid #a4d3ff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border-left: 5px solid #99ccff;
+      transition: 0.3s;
+    }
+
+    .education li:hover {
+      transform: translateX(5px);
+      background: #e0f0ff;
     }
 
     /* ====== ORGANISASI ====== */
     .organization ul {
-      list-style: square;
-      padding-left: 20px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .organization li {
+      background: #ffe6f2;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border-left: 5px solid #ffb3d9;
+      transition: 0.3s;
+    }
+
+    .organization li:hover {
+      transform: translateX(5px);
+      background: #ffd6eb;
     }
 
     /* ====== PROYEK ====== */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
 
     .project-card {
-      background-color: #f7f0ff;
-      padding: 20px;
-      border-radius: 15px;
+      background: linear-gradient(135deg, #d9ecff, #ffe6f2);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: 0.4s;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
     .project-card h4 {
@@ -136,26 +188,34 @@
       color: #444;
     }
 
+    /* ====== FOOTER ====== */
     footer {
       text-align: center;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.8);
+      padding: 25px;
+      background: rgba(255,255,255,0.8);
       border-top: 3px solid #ffb3d9;
       color: #555;
-      margin-top: 50px;
+      font-size: 0.95em;
     }
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 600px) {
-      section { padding: 25px; }
-      .projects { grid-template-columns: 1fr; }
+      header {
+        flex-direction: column;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      section {
+        padding: 25px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Portofolio Dea Azizah</h1>
+    <h1>Dea Azizah</h1>
     <nav>
       <a href="#profil">Profil</a>
       <a href="#pendidikan">Pendidikan</a>
@@ -164,14 +224,59 @@
     </nav>
   </header>
 
-  <!-- PROFIL -->
-  <section id="profil" class="profile">
-    <!-- Ganti link di bawah dengan foto kamu -->
-    <img src="https://via.placeholder.com/150" alt="Foto Profil Dea Azizah">
-    <h3>Dea Azizah</h3>
-    <p>Junior Web Developer | HTML | CSS | JavaScript</p>
-    <p>Saya seorang junior web developer yang menyukai dunia front-end, desain UI/UX, dan pengembangan web interaktif. Saya berfokus untuk membuat website yang fungsional, menarik, dan responsif.</p>
+  <section class="hero" id="profil">
+    <!-- 💡 Ganti foto profil kamu di bagian src -->
+    <img src="https://via.placeholder.com/150" alt="Foto Dea Azizah">
+    <h2>Dea Azizah</h2>
+    <p>Junior Web Developer | Front-End Enthusiast 💙💗</p>
   </section>
 
-  <!-- PENDIDIKAN -->
-  <sec
+  <section class="profile">
+    <h2 class="section-title">Tentang Saya</h2>
+    <p>
+      Halo! Saya Dea, seorang <strong>Junior Web Developer</strong> dengan minat besar pada desain antarmuka yang elegan dan pengembangan web interaktif.
+      Saya terbiasa bekerja menggunakan <strong>HTML, CSS, JavaScript</strong>, dan memiliki ketertarikan untuk terus belajar teknologi web modern.
+    </p>
+  </section>
+
+  <section id="pendidikan" class="education">
+    <h2 class="section-title">Pendidikan</h2>
+    <ul>
+      <li><strong>Universitas Teknologi Bandung</strong> — S1 Teknik Informatika (2022 - Sekarang)</li>
+      <li><strong>SMA Negeri 1 Bandung</strong> — Jurusan IPA (2019 - 2022)</li>
+    </ul>
+  </section>
+
+  <section id="organisasi" class="organization">
+    <h2 class="section-title">Organisasi</h2>
+    <ul>
+      <li>Himpunan Mahasiswa Informatika — Anggota Aktif (2023 - Sekarang)</li>
+      <li>Panitia Web Design Competition — Divisi Dokumentasi (2024)</li>
+    </ul>
+  </section>
+
+  <section id="proyek" class="projects">
+    <h2 class="section-title">Proyek Website</h2>
+
+    <div class="project-card">
+      <h4>Website Portofolio Pribadi</h4>
+      <p>Mengembangkan website portofolio interaktif menggunakan HTML, CSS, dan animasi halus.</p>
+    </div>
+
+    <div class="project-card">
+      <h4>PastelShop E-Commerce</h4>
+      <p>Membuat tampilan e-commerce dengan desain pastel yang lembut dan layout responsif.</p>
+    </div>
+
+    <div class="project-card">
+      <h4>Landing Page Kampus</h4>
+      <p>Halaman promosi acara kampus yang menarik, responsif, dan penuh warna.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Dea Azizah | Dibuat dengan 💙 & 💗 untuk dunia web yang indah
+  </footer>
+
+</body>
+</html>
