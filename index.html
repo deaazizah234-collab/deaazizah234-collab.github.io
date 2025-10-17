@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portofolio Dea Azizah | Junior Web Developer</title>
   <style>
-    /* ===== RESET & GAYA UMUM ===== */
+    /* ===== RESET DAN GAYA DASAR ===== */
     * {
       margin: 0;
       padding: 0;
@@ -16,58 +16,57 @@
     body {
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #d8f3dc, #f1faee);
-      color: #2e2e2e;
+      color: #1b4332;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 10;
     }
 
     header h1 {
-      font-size: 1.8em;
       color: #2d6a4f;
-      font-weight: 700;
+      font-size: 1.8em;
+      font-weight: bold;
     }
 
     nav a {
       margin-left: 25px;
       text-decoration: none;
-      color: #333;
+      color: #1b4332;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
       color: #40916c;
     }
 
-    /* ===== HERO / PROFIL ===== */
+    /* ===== HERO SECTION ===== */
     .hero {
       text-align: center;
       padding: 80px 20px;
       background: linear-gradient(135deg, #b7e4c7, #d8f3dc);
-      color: #1b4332;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .hero img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      margin-bottom: 20px;
-      transition: transform 0.4s ease;
       object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
     }
 
     .hero img:hover {
@@ -75,42 +74,37 @@
     }
 
     .hero h2 {
-      font-size: 2.4em;
+      font-size: 2.2em;
       margin-bottom: 10px;
+      color: #1b4332;
     }
 
     .hero p {
+      color: #2e2e2e;
       font-size: 1.1em;
-      color: #333;
     }
 
-    /* ===== SECTION STYLE ===== */
+    /* ===== BAGIAN UMUM ===== */
     section {
       max-width: 1000px;
       margin: 60px auto;
-      background: #ffffffcc;
+      background: #ffffffd9;
       padding: 40px;
       border-radius: 25px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 0.8s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
     h2.section-title {
-      color: #2d6a4f;
       border-left: 6px solid #74c69d;
       padding-left: 15px;
+      color: #1b4332;
       font-size: 1.8em;
       margin-bottom: 20px;
     }
 
     p {
-      color: #444;
       line-height: 1.7;
+      color: #333;
     }
 
     /* ===== TENTANG SAYA ===== */
@@ -174,19 +168,19 @@
       background: #f4fff8;
       padding: 25px;
       border-radius: 20px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
     }
 
     .project-card img {
       width: 100%;
-      height: 160px;
+      height: 170px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 15px;
@@ -198,17 +192,17 @@
     }
 
     .project-card p {
-      font-size: 0.95em;
       color: #333;
+      font-size: 0.95em;
     }
 
     /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 25px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-top: 3px solid #74c69d;
-      color: #333;
+      color: #2d6a4f;
       font-size: 0.95em;
       margin-top: 60px;
     }
@@ -224,15 +218,12 @@
       section {
         padding: 25px;
       }
-      .hero h2 {
-        font-size: 2em;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ===== HEADER ===== -->
   <header>
     <h1>Dea Azizah</h1>
     <nav>
@@ -243,25 +234,24 @@
     </nav>
   </header>
 
-  <!-- HERO / PROFIL -->
+  <!-- ===== PROFIL / HERO ===== -->
   <section class="hero" id="profil">
-    <!-- Ganti link foto profil kamu di sini -->
-    <img src="https://via.placeholder.com/160" alt="Foto Dea Azizah">
+    <!-- 💡 Ganti "foto-dea.jpg" dengan nama file fotomu -->
+    <img src="Dea Azizah.png" alt="Foto Dea Azizah">
     <h2>Dea Azizah</h2>
-    <p>Junior Web Developer | Front-End Enthusiast 🌿</p>
+    <p>Junior Web Developer | Front-End Enthusiast 💚</p>
   </section>
 
-  <!-- TENTANG SAYA -->
+  <!-- ===== TENTANG SAYA ===== -->
   <section class="profile">
     <h2 class="section-title">Tentang Saya</h2>
     <p>
-      Halo! Saya <strong>Dea Azizah</strong>, seorang Junior Web Developer yang menyukai keindahan desain web dan fungsionalitas kode.
-      Saya berfokus pada pengembangan antarmuka web menggunakan <strong>HTML, CSS, dan JavaScript</strong> dengan pendekatan elegan dan ramah pengguna.
-      Saya percaya bahwa setiap website harus mencerminkan identitas dan pengalaman yang menyenangkan bagi penggunanya.
+      Halo! Saya <strong>Dea Azizah</strong>, seorang Junior Web Developer yang berfokus pada pembuatan tampilan web menarik, responsif, dan elegan.
+      Saya menguasai HTML, CSS, dan JavaScript dasar serta memiliki minat dalam pengembangan front-end dan desain UI/UX.
     </p>
   </section>
 
-  <!-- PENDIDIKAN -->
+  <!-- ===== PENDIDIKAN ===== -->
   <section id="pendidikan" class="education">
     <h2 class="section-title">Pendidikan</h2>
     <ul>
@@ -270,7 +260,7 @@
     </ul>
   </section>
 
-  <!-- ORGANISASI -->
+  <!-- ===== ORGANISASI ===== -->
   <section id="organisasi" class="organization">
     <h2 class="section-title">Organisasi</h2>
     <ul>
@@ -280,30 +270,31 @@
     </ul>
   </section>
 
-  <!-- PROYEK -->
+  <!-- ===== PROYEK ===== -->
   <section id="proyek" class="projects">
     <h2 class="section-title">Proyek Website</h2>
 
     <div class="project-card">
-      <img src="https://via.placeholder.com/400x200?text=Portofolio+Website" alt="Proyek Portofolio">
+      <!-- 💡 Ganti "project1.jpg" dengan file gambar proyekmu -->
+      <img src="project1.jpg" alt="Proyek Portofolio">
       <h4>Website Portofolio Pribadi</h4>
-      <p>Membangun website portofolio dengan gaya minimalis, berwarna hijau pastel, dan animasi lembut.</p>
+      <p>Membangun portofolio pribadi dengan gaya hijau pastel dan animasi elegan.</p>
     </div>
 
     <div class="project-card">
-      <img src="https://via.placeholder.com/400x200?text=E-Commerce" alt="Proyek E-Commerce">
+      <img src="project2.jpg" alt="Proyek E-Commerce">
       <h4>PastelShop E-Commerce</h4>
-      <p>Website toko online dengan tampilan pastel hijau dan desain elegan yang responsif di semua perangkat.</p>
+      <p>Website toko online bertema hijau pastel dengan desain modern dan responsif.</p>
     </div>
 
     <div class="project-card">
-      <img src="https://via.placeholder.com/400x200?text=Landing+Page" alt="Landing Page Kampus">
+      <img src="project3.jpg" alt="Landing Page Event">
       <h4>Landing Page Event Kampus</h4>
-      <p>Landing page informatif dengan tampilan bersih dan nuansa hijau yang menenangkan.</p>
+      <p>Landing page interaktif untuk event kampus, dengan layout yang bersih dan elegan.</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     © 2025 Dea Azizah | Dibuat dengan 💚 oleh Junior Web Developer
   </footer>
